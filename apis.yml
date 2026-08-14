@@ -9,7 +9,12 @@ description: 'Passionfroot is a Berlin-based platform for creator-led go-to-mark
   pricing, bookings, invoicing, and payouts in one place; the company monetizes by
   taking a commission on completed deals rather than charging a subscription. As of
   this enrichment pass Passionfroot exposes no public developer API, SDK, or developer
-  documentation — it is an end-user SaaS product, not an API provider.'
+  documentation — it is an end-user SaaS product, not an API provider. Its only public
+  developer surface is open-source tooling extracted from its own stack and published
+  under the @passionfroot npm scope: an MIT-licensed PostgreSQL MCP server with
+  Prisma-aware schema introspection (plus a companion Agent Skill) and a Prisma-to-Zero
+  schema generator. Those run against the operator''s own database and do not reach
+  Passionfroot platform data.'
 url: https://raw.githubusercontent.com/api-evangelist/passionfroot/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -30,7 +35,7 @@ accessModel:
   method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-13'
 image: https://res.cloudinary.com/passionfroot/image/upload/w_1200,h_630,c_fill/f_jpg/website/og-image
 tags:
 - Company
@@ -71,8 +76,53 @@ common:
   url: https://github.com/passionfroot
 - type: DomainSecurity
   url: security/passionfroot-domain-security.yml
+- type: StatusPage
+  name: Passionfroot status (Checkly)
+  url: https://status.passionfroot.me/
+- type: Compliance
+  name: GDPR & Passionfroot
+  url: https://help.passionfroot.me/en/articles/11570259-gdpr-passionfroot
+- type: LLMsTxt
+  name: Help centre llms.txt (provider-published)
+  url: llms/passionfroot-llms.txt
+- type: Packages
+  name: First-party open-source npm packages
+  url: packages/passionfroot-packages.yml
+- type: MCPServer
+  name: PostgreSQL MCP server (first-party open source; NOT a Passionfroot platform surface)
+  url: mcp/passionfroot-mcp.yml
+- type: AgentSkill
+  name: postgres-query (provider-published skill for its own MCP server)
+  url: skills/_index.yml
+- type: ChangeLog
+  name: "@passionfroot/postgres-mcp release history"
+  url: changelog/passionfroot-changelog.yml
+- type: Lifecycle
+  url: lifecycle/passionfroot-lifecycle.yml
+- type: Conformance
+  url: conformance/passionfroot-conformance.yml
+- type: Plans
+  url: plans/passionfroot-plans-pricing.yml
 x-enrichment:
-  date: '2026-07-20'
-  status: minimal
-  artifacts_added: 1
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 11
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Passionfroot is an end-user SaaS marketplace with no platform API — api., docs. and
+    developers.passionfroot.me have no DNS record at all, /developers and /api 404 on the
+    marketing site, and the workspace app talks to its own origin over a Rocicorp Zero
+    sync endpoint (/api/zero/push) rather than a documented public interface.
+  evidence:
+    - url: https://www.passionfroot.me/developers
+      status: 404
+    - url: https://www.passionfroot.me/api
+      status: 404
+    - url: https://workspace.passionfroot.me/openapi.json
+      status: 404
+    - url: https://api.passionfroot.me/openapi.json
+      status: 0
+  checked: '2026-08-13'
