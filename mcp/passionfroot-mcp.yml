@@ -1,0 +1,64 @@
+generated: '2026-08-13'
+method: searched
+status: published
+source: https://github.com/Passionfroot/postgres-mcp
+scope_warning: >-
+  READ THIS BEFORE TREATING THIS AS A PASSIONFROOT AGENT SURFACE. Passionfroot ships a
+  real, first-party, MIT-licensed MCP server — but it is a general-purpose PostgreSQL
+  MCP server extracted from its own engineering stack, NOT a server that exposes the
+  Passionfroot platform. An agent running it talks to the OPERATOR'S OWN Postgres
+  database. Passionfroot publishes no public API and no hosted MCP endpoint, so there
+  is no way for an outside agent to reach Passionfroot data through MCP.
+deployment:
+  mode: local-stdio
+  endpoint: null
+  install: npx -y @passionfroot/postgres-mcp path/to/postgres-mcp.toml
+  package: https://www.npmjs.com/package/@passionfroot/postgres-mcp
+  auth: none
+  verified: searched
+  note: >-
+    stdio is the default transport (one process per client). The server also offers a
+    self-hosted `--http` Streamable HTTP mode bound to 127.0.0.1:7803/mcp with an
+    optional `Authorization: Bearer` token — that is a LOOPBACK server the operator
+    runs, not a vendor-hosted remote endpoint, so mode stays `local-stdio`.
+server:
+  name: postgres-mcp
+  package: "@passionfroot/postgres-mcp"
+  version: 0.4.0
+  published: '2026-08-07'
+  license: MIT
+  transport: [stdio, streamable-http]
+  http_bind: 127.0.0.1:7803/mcp
+  repository: https://github.com/Passionfroot/postgres-mcp
+tools:
+  - name: execute_sql
+    description: >-
+      Execute SQL against a configured database source; returns JSON rows. Safety:
+      LIMIT injection on unbounded SELECTs, per-source statement timeout, read-only
+      session enforcement, multi-statement blocking, response byte cap.
+    source: README.md#tools
+  - name: search_objects
+    description: >-
+      Search for tables by name (Prisma model name or SQL table name). Returns
+      column-level detail: types, nullability, defaults, FK relationships (with join
+      cardinality) and enum values.
+    source: README.md#tools
+resources:
+  - uri: "schema://[database]"
+    description: >-
+      Lean relationship map — tables, their Prisma model names, and FK connections
+      (incoming and outgoing). Orientation surface before drilling in with
+      search_objects.
+    source: README.md#tools
+skill:
+  file: skills/passionfroot-postgres-query.md
+  source: https://github.com/Passionfroot/postgres-mcp/blob/main/examples/SKILL.md
+crosswalk: null
+crosswalk_reason: >-
+  No tool crosswalk is emitted: a crosswalk binds MCP tools to backing OpenAPI
+  operationIds, and Passionfroot publishes no OpenAPI (and no GraphQL). The tools here
+  are generic SQL/introspection primitives with no REST counterpart to bind to.
+x-evidence:
+  - {url: 'https://raw.githubusercontent.com/Passionfroot/postgres-mcp/main/README.md', http_status: 200}
+  - {url: 'https://registry.npmjs.org/@passionfroot%2Fpostgres-mcp', http_status: 200}
+  - {url: 'https://mcp.passionfroot.me/', http_status: 0, note: 'no DNS record — no hosted MCP endpoint'}

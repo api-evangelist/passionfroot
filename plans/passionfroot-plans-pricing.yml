@@ -1,0 +1,73 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.passionfroot.me/creator-pricing
+docs:
+  - https://www.passionfroot.me/creator-pricing
+  - https://help.passionfroot.me/en/articles/11552638-pricing
+  - https://help.passionfroot.me/en/articles/12355217-passionfroot-subscription-and-account-access
+note: >-
+  Passionfroot is take-rate priced, not subscription priced, on the creator side: one
+  free tier plus commission on completed deals. The brand/partner side is NOT publicly
+  priced — the help centre references a paid "Starter Plan" and says the Free Plan has
+  been phased out for partners, but no partner tier carries a published price and
+  www.passionfroot.me/pricing returns 404. Only the creator-side tier is counted below;
+  the unpriced partner tier is recorded separately so the absence is visible rather than
+  silently dropped. These are API-EVANGELIST-CATALOGUED PLANS FOR THE PRODUCT — there is
+  no API, so there are no API plans.
+plan_count: 1
+model: commission
+currency: USD
+plans:
+  - name: Get Started
+    audience: creators
+    price: 0
+    currency: USD
+    billing_period: none
+    description: "Helping creators get started — for all creators."
+    included:
+      - Media kit with live stats
+      - Calendar & scheduling
+      - Automated workflows & booking forms
+      - Streamlined payments
+      - Messaging
+      - High quality brand deals from ad network
+    limits: []
+fees:
+  - id: transaction-fee
+    rate: "2%"
+    basis: every transaction
+    paid_by: brand
+    source: https://www.passionfroot.me/creator-pricing
+    quote: "Passionfroot adds a 2% fee on every transaction, which the brand covers."
+  - id: sourcing-fee-partner-network
+    rate: "15%"
+    basis: deals sourced through the Passionfroot Partner Network / Discover
+    paid_by: creator (deducted from payout)
+    includes_payment_processing: true
+    source: https://help.passionfroot.me/en/articles/11552638-pricing
+    quote: >-
+      "When we match you with a brand, we charge a 15% fee (incl. payment fees)." A
+      $1,000 Sponsored Video booking pays out $850.
+  - id: own-deal-fee
+    rate: "5%"
+    basis: bookings the creator sources themselves (storefront, own proposals)
+    paid_by: partner/brand
+    source: https://help.passionfroot.me/en/articles/11552638-pricing
+    quote: >-
+      "We don't charge you fees on the brand deals you source yourself. We charge that
+      5% fee to the partner."
+    currency_note: >-
+      The help-centre fee table is annotated "Pricing as of Feb 2024" and states 5%
+      where the current creator-pricing page states 2%; both are recorded as published.
+unpriced_tiers:
+  - name: Starter Plan (partner/brand side)
+    audience: partners/brands
+    price: null
+    reason: >-
+      Named in the help centre as the upgrade path once the Free Plan was phased out,
+      but no price is published anywhere on the public site; /pricing returns 404.
+    source: https://help.passionfroot.me/en/articles/12355217-passionfroot-subscription-and-account-access
+x-evidence:
+  - {url: 'https://www.passionfroot.me/creator-pricing', http_status: 200}
+  - {url: 'https://www.passionfroot.me/pricing', http_status: 404}
+  - {url: 'https://help.passionfroot.me/en/articles/11552638-pricing.md', http_status: 200}

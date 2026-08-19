@@ -1,0 +1,51 @@
+generated: '2026-08-13'
+method: searched
+source: https://github.com/Passionfroot/postgres-mcp/releases
+note: >-
+  Passionfroot publishes no product changelog and no API changelog — the marketing site
+  has no /changelog and the help centre carries no release notes. The only dated,
+  versioned change record the company publishes is the release history of its
+  open-source @passionfroot/postgres-mcp MCP server: a Changesets-generated CHANGELOG.md
+  plus tagged GitHub releases. Entries before 0.4.0 are not tracked in CHANGELOG.md
+  ("Not tracked in this file. See `git log`"), so only their tag dates are recorded here.
+subject: "@passionfroot/postgres-mcp"
+scheme: semver
+tooling: changesets
+current_version: 0.4.0
+changelog_url: https://github.com/Passionfroot/postgres-mcp/blob/main/CHANGELOG.md
+releases_url: https://github.com/Passionfroot/postgres-mcp/releases
+entries:
+  - version: 0.4.0
+    date: '2026-08-06'
+    npm_published: '2026-08-07'
+    breaking: true
+    breaking_note: >-
+      read_only_queries now defaults to true for any source that sets `role` or
+      `session_vars`; sources of that shape stop accepting non-SELECT SQL.
+    highlights:
+      - Automatic expansion of `SELECT *` to the caller's privilege-filtered columns.
+      - Prisma annotations suppressed when no prisma_schema_path is configured; empty schema:// resource fixed.
+      - "--http transport hardened for shared use: 4 MB body cap, per-server pool budget, session cap and idle timeout, Origin validation, constant-time bearer comparison, --token-file."
+      - Tenant-scoped sources restricted to read-only SELECT queries, with extended-query-protocol as a second line of defence.
+      - Incoming foreign keys annotated with join cardinality ([1:1] / [1:many]) plus fan-out warnings.
+      - Schema introspection now checks has_column_privilege(SELECT) so it stops advertising unqueryable columns.
+      - Timestamp/date columns no longer shifted by the server's local UTC offset.
+  - version: 0.3.0
+    date: '2026-06-11'
+    breaking: null
+    highlights: []
+    note: not tracked in CHANGELOG.md; tag date from the GitHub release
+  - version: 0.2.0
+    date: '2026-03-19'
+    breaking: null
+    highlights: []
+    note: not tracked in CHANGELOG.md; tag date from the GitHub release
+  - version: 0.1.1
+    date: '2026-02-25'
+    breaking: null
+    highlights: []
+    note: first published release; tag date from the GitHub release
+x-evidence:
+  - {url: 'https://api.github.com/repos/Passionfroot/postgres-mcp/releases', http_status: 200}
+  - {url: 'https://raw.githubusercontent.com/Passionfroot/postgres-mcp/main/CHANGELOG.md', http_status: 200}
+  - {url: 'https://www.passionfroot.me/changelog', http_status: 404}

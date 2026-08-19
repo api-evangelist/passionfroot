@@ -1,0 +1,18 @@
+generated: '2026-08-13'
+method: searched
+source: https://help.passionfroot.me/
+note: >-
+  HONEST ZERO. Passionfroot publishes no rate limits because it publishes no public API:
+  there is no developer portal, no API reference and no api./developers. host in DNS. The
+  only rate-limit-shaped controls the company documents are product-level, not API-level
+  (Discover/search access gated on subscription and vetting status), so none of them are
+  a runtime signal an agent could read. No `RateLimits` pointer is wired into apis.yml
+  from this file — a pointer here would assert a rate-limit surface that does not exist.
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status: null
+x-evidence:
+  - {url: 'https://www.passionfroot.me/developers', http_status: 404}
+  - {url: 'https://www.passionfroot.me/api', http_status: 404}
+  - {url: 'https://api.passionfroot.me/', http_status: 0, note: 'no DNS record'}

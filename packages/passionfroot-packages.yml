@@ -1,0 +1,61 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.npmjs.com/org/passionfroot
+note: >-
+  Passionfroot publishes no client SDK, because it publishes no public API. What it
+  does publish under the @passionfroot npm scope is two first-party OPEN-SOURCE
+  DEVELOPER TOOLS extracted from its own engineering stack (a Prisma->Zero schema
+  generator and a PostgreSQL MCP server). They are genuinely first-party — npm scope
+  @passionfroot, author "Passionfroot <engineering@passionfroot.me>" / "Passionfroot
+  GmbH", repository github.com/Passionfroot — but they are NOT API client libraries
+  for the Passionfroot platform, so no `SDKs` pointer is emitted for them.
+registries_checked:
+  - {registry: npm, result: 2 first-party packages under the @passionfroot scope}
+  - {registry: pypi, result: none}
+  - {registry: rubygems, result: none}
+  - {registry: packagist, result: none}
+  - {registry: crates.io, result: none}
+  - {registry: nuget, result: none}
+  - {registry: maven-central, result: none}
+  - {registry: pkg.go.dev, result: none}
+packages:
+  - language: typescript
+    registry: npm
+    name: "@passionfroot/postgres-mcp"
+    url: https://www.npmjs.com/package/@passionfroot/postgres-mcp
+    repository: https://github.com/Passionfroot/postgres-mcp
+    install: npx -y @passionfroot/postgres-mcp
+    official: true
+    kind: mcp-server
+    api_client: false
+    license: MIT
+    version: 0.4.0
+    published: '2026-08-07'
+    first_published: '2026-02-25'
+    release_count: 5
+    description: >-
+      A Model Context Protocol server for PostgreSQL with Prisma-aware schema
+      introspection. Connects an agent to the OPERATOR'S OWN Postgres database —
+      it does not expose Passionfroot platform data.
+  - language: typescript
+    registry: npm
+    name: "@passionfroot/prisma-generator-zero"
+    url: https://www.npmjs.com/package/@passionfroot/prisma-generator-zero
+    repository: https://github.com/Passionfroot/prisma-generator-zero
+    install: npm install -D @passionfroot/prisma-generator-zero
+    official: true
+    kind: build-tool
+    api_client: false
+    license: MIT
+    version: 0.4.0
+    published: '2025-06-29'
+    first_published: '2024-12-29'
+    release_count: 13
+    description: A Prisma generator for generating Zero (Rocicorp) schema with ease.
+    currency_note: >-
+      Latest npm release 0.4.0 predates the repo's most recent activity (GitHub
+      pushed 2026-04-09); the published artifact is ~13 months old as of this pass.
+x-evidence:
+  - {url: 'https://registry.npmjs.org/@passionfroot%2Fpostgres-mcp', http_status: 200}
+  - {url: 'https://registry.npmjs.org/@passionfroot%2Fprisma-generator-zero', http_status: 200}
+  - {url: 'https://api.github.com/orgs/passionfroot/repos', http_status: 200}

@@ -1,0 +1,42 @@
+# Passionfroot Help Center
+
+> What can we help you with?
+
+## I am a creator
+
+- [Day 1 with Passionfroot](https://help.passionfroot.me/en/articles/11552627-day-1-with-passionfroot.md)
+- [Your first booking](https://help.passionfroot.me/en/articles/11552634-your-first-booking.md): How to create and send a proposal to a brand so you can get paid efficiently
+- [Pricing](https://help.passionfroot.me/en/articles/11552638-pricing.md)
+- [Navigating your Workspace](https://help.passionfroot.me/en/articles/11552675-navigating-your-workspace.md)
+- [VAT on Passionfroot: What Creators and Brands Need to Know](https://help.passionfroot.me/en/articles/16237342-vat-on-passionfroot-what-creators-and-brands-need-to-know.md): How VAT works on your collaborations — where you set it, which treatment normally applies, what "reverse charge" means, and why a VAT line might show 0.00.
+- [Storefront](https://help.passionfroot.me/en/articles/11552776-storefront.md)
+- [The Collaboration Flow](https://help.passionfroot.me/en/articles/11552787-the-collaboration-flow.md)
+- [Messaging & Inbox](https://help.passionfroot.me/en/articles/11552815-messaging-inbox.md)
+- [Calendar](https://help.passionfroot.me/en/articles/11552830-calendar.md)
+- [Getting Paid on Passionfroot](https://help.passionfroot.me/en/articles/11552849-getting-paid-on-passionfroot.md)
+- [Reports](https://help.passionfroot.me/en/articles/11581584-reports.md)
+- [The Creator Vetting Process](https://help.passionfroot.me/en/articles/11828931-the-creator-vetting-process.md)
+- [FAQs](https://help.passionfroot.me/en/articles/11552873-faqs.md)
+- [Discover](https://help.passionfroot.me/en/articles/11552930-discover.md)
+
+## I am a partner
+
+- [Getting started](https://help.passionfroot.me/en/articles/11563316-getting-started.md)
+- [ZEST - The Creator marketing AI Agent](https://help.passionfroot.me/en/articles/13610469-zest-the-creator-marketing-ai-agent.md)
+- [Discover and Book the right Creators to Your Campaign](https://help.passionfroot.me/en/articles/11563360-discover-and-book-the-right-creators-to-your-campaign.md)
+- [Collaboration Management](https://help.passionfroot.me/en/articles/11564057-collaboration-management.md)
+- [Analytics & Insights for Partners](https://help.passionfroot.me/en/articles/11631732-analytics-insights-for-partners.md)
+- [Paying Creators on Passionfroot](https://help.passionfroot.me/en/articles/11564063-paying-creators-on-passionfroot.md)
+- [Partner Settings](https://help.passionfroot.me/en/articles/11564193-partner-settings.md)
+- [Passionfroot subscription and account access](https://help.passionfroot.me/en/articles/12355217-passionfroot-subscription-and-account-access.md)
+- [Security & Data Processing](https://help.passionfroot.me/en/articles/13490633-security-data-processing.md): Passionfroot’s current security certifications and authentication methods, including the absence of ISO 27001 or SOC 2 accreditation and the platform’s current lack of two-factor authentication \(2FA\).
+- [Partner Referral Program](https://help.passionfroot.me/en/articles/11564268-partner-referral-program.md)
+
+## Other Resources
+
+- [Privacy Policy](https://help.passionfroot.me/en/articles/11569203-privacy-policy.md)
+- [Terms & Conditions](https://help.passionfroot.me/en/articles/11570199-terms-conditions.md)
+- [Community Guidelines](https://help.passionfroot.me/en/articles/13977082-community-guidelines.md): Guidelines for partners and creators to ensure collaborations on Passionfroot remain secure, transparent, and fair for everyone involved.
+- [GDPR & Passionfroot](https://help.passionfroot.me/en/articles/11570259-gdpr-passionfroot.md)
+- [App Performance Status](https://help.passionfroot.me/en/articles/11570277-app-performance-status.md)
+- [Other FAQs](https://help.passionfroot.me/en/articles/11570280-other-faqs.md)

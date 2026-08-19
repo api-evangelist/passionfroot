@@ -1,0 +1,56 @@
+generated: '2026-08-13'
+method: probed
+source: live GET of every /.well-known/ path on every Passionfroot-controlled host
+note: >-
+  RECORDED ABSENCE. Passionfroot serves no /.well-known/ discovery document of its own.
+  Both www.passionfroot.me and workspace.passionfroot.me answer every /.well-known/*
+  path with an HTML 404 (workspace is a single-page app whose 404 body is a 180 KB HTML
+  shell). The one 200 in this probe — /.well-known/security.txt on help.passionfroot.me
+  — is INTERCOM'S document, not Passionfroot's: it names Intercom's Bugcrowd program,
+  security@intercom.com, and `Canonical: https://app.intercom.com/.well-known/
+  security.txt`. help.passionfroot.me is a CNAME onto Intercom's help-center service, so
+  that file is the vendor's, and crediting Passionfroot with it would assert a
+  vulnerability-disclosure program the company does not run. No `WellKnown` and no
+  `SecurityTxt` pointer is emitted from this probe.
+hosts:
+  - host: https://www.passionfroot.me
+    controlled_by: passionfroot
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+  - host: https://workspace.passionfroot.me
+    controlled_by: passionfroot
+    note: SPA — every 404 returns an HTML shell, not a document
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/oauth-protected-resource, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+  - host: https://help.passionfroot.me
+    controlled_by: intercom
+    note: >-
+      Passionfroot-branded subdomain CNAMEd to Intercom's hosted help centre. Documents
+      served here are Intercom's, not Passionfroot's.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        owner: intercom
+        canonical: https://app.intercom.com/.well-known/security.txt
+        credited: false
+        reason: third-party vendor document served on a Passionfroot-branded host
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+  - host: https://api.passionfroot.me
+    controlled_by: passionfroot
+    note: no DNS record exists for this host
+    documents: []

@@ -1,0 +1,42 @@
+generated: '2026-08-13'
+method: searched
+source: https://status.passionfroot.me/
+note: >-
+  Passionfroot publishes no API versioning policy, no deprecation policy, no Sunset/
+  Deprecation header support and no SLA, because it publishes no API. What it does run
+  is a public service status page on its own subdomain. The only versioned artefact it
+  ships is the open-source @passionfroot/postgres-mcp package, which is versioned with
+  semver via Changesets and cut as dated GitHub releases.
+status_page: https://status.passionfroot.me/
+status_page_detail:
+  host: status.passionfroot.me
+  vendor: Checkly
+  evidence: DNS CNAME status.passionfroot.me -> checkly-dashboards.com
+  http_status: 200
+  machine_readable: false
+  note: >-
+    Nuxt single-page dashboard; component state is rendered client-side from
+    api.checklyhq.com and no summary.json / RSS feed is exposed (every path under the
+    host returns the same 1.2 KB SPA shell with HTTP 200, so path probes there are not
+    evidence of a document).
+versioning:
+  api: null
+  api_note: no public API, therefore no API versioning scheme
+  packages:
+    scheme: semver
+    tooling: changesets
+    current: 0.4.0
+    source: https://github.com/Passionfroot/postgres-mcp/blob/main/CHANGELOG.md
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: none published
+sla:
+  url: null
+  uptime_target: null
+  note: none published
+deprecated_operations: []
+x-evidence:
+  - {url: 'https://status.passionfroot.me/', http_status: 200}
+  - {url: 'https://www.passionfroot.me/status', http_status: 404}
+  - {url: 'https://api.github.com/repos/Passionfroot/postgres-mcp/releases', http_status: 200}
