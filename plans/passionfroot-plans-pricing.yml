@@ -71,3 +71,16 @@ x-evidence:
   - {url: 'https://www.passionfroot.me/creator-pricing', http_status: 200}
   - {url: 'https://www.passionfroot.me/pricing', http_status: 404}
   - {url: 'https://help.passionfroot.me/en/articles/11552638-pricing.md', http_status: 200}
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  units: []
+  plans:
+  - name: Get Started
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
