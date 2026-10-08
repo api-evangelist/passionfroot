@@ -75,6 +75,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: RateLimits
+  url: rate-limits/passionfroot-rate-limits.yml
 - type: Website
   url: https://www.passionfroot.me/
 - type: HelpCenter
